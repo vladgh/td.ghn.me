@@ -1,3 +1,23 @@
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://tdghn.netlify.com/*"
+  to = "https://td.ghn.me/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*" # This defines which paths this specific [[headers]] block will cover.
+  [headers.values]
+    # Enables XSS filtering. Rather than sanitizing the page, the browser will prevent rendering of the page if an attack is detected.
+    X-XSS-Protection = "1; mode=block"
+    # Block site from being framed with X-Frame-Options and CSP
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "default-src https:"
+    # Prevent browsers from incorrectly detecting non-scripts as scripts
+    X-Content-Type-Options= "nosniff"
+    # The browser will send the full URL to requests to the same origin but only send the origin when requests are cross-origin
+    Referrer-Policy= "strict-origin-when-cross-origin"
+
 [build]
 publish = "public"
 command = "hugo"
