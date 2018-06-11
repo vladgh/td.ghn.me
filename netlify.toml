@@ -10,9 +10,8 @@
   [headers.values]
     # Enables XSS filtering. Rather than sanitizing the page, the browser will prevent rendering of the page if an attack is detected.
     X-XSS-Protection = "1; mode=block"
-    # Block site from being framed with X-Frame-Options and CSP
+    # Block site from being framed with X-Frame-Options and Content Security Policy
     X-Frame-Options = "DENY"
-    Content-Security-Policy = "default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src w3.org"
     # Prevent browsers from incorrectly detecting non-scripts as scripts
     X-Content-Type-Options= "nosniff"
     # The browser will send the full URL to requests to the same origin but only send the origin when requests are cross-origin
