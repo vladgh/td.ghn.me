@@ -12,11 +12,11 @@
     X-XSS-Protection = "1; mode=block"
     # Block site from being framed with X-Frame-Options and CSP
     X-Frame-Options = "DENY"
-    Content-Security-Policy = "default-src https:"
+    Content-Security-Policy = "default-src 'self'"
     # Prevent browsers from incorrectly detecting non-scripts as scripts
     X-Content-Type-Options= "nosniff"
-    # The browser will not send the referrer header when navigating from HTTPS to HTTP, but will always send the full URL in the referrer header when navigating from HTTP to any origin. It doesn't matter whether the source and destination are the same site or not, only the scheme.
-    Referrer-Policy= "no-referrer-when-downgrade"
+    # The browser will send the full URL to requests to the same origin but only send the origin when requests are cross-origin
+    Referrer-Policy= "strict-origin-when-cross-origin"
 
 [build]
 publish = "public"
