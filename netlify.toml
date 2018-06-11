@@ -12,7 +12,7 @@
     X-XSS-Protection = "1; mode=block"
     # Block site from being framed with X-Frame-Options and CSP
     X-Frame-Options = "DENY"
-    Content-Security-Policy = "default-src 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src https://code.jquery.com/* https://stackpath.bootstrapcdn.com/* https://cdnjs.cloudflare.com/ajax/*; style-src https://stackpath.bootstrapcdn.com/* https://use.fontawesome.com/*"
     # Prevent browsers from incorrectly detecting non-scripts as scripts
     X-Content-Type-Options= "nosniff"
     # The browser will send the full URL to requests to the same origin but only send the origin when requests are cross-origin
