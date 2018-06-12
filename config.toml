@@ -1,3 +1,4 @@
 baseURL = "https://td.ghn.me/"
 languageCode = "en-us"
 title = "Tulane University - Theatre and Dance"
+disableKinds = ['RSS', 'taxonomy']
